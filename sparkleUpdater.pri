@@ -1,7 +1,5 @@
-INCLUDEPATH += $$PWD
-DEPENDPATH += $$PWD
-
 INCLUDEPATH += $$PWD/include
+DEPENDPATH += $$PWD
 
 macx{
     QMAKE_LFLAGS += -Wl,-rpath,@loader_path/../Frameworks
