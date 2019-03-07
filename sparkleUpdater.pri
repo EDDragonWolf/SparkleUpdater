@@ -1,7 +1,7 @@
 INCLUDEPATH += $$PWD/include
 DEPENDPATH += $$PWD
 
-macx{
+macx {
     QMAKE_LFLAGS += -Wl,-rpath,@loader_path/../Frameworks
     LIBS += -L$$PWD/mac -lsparkle
 
@@ -13,7 +13,7 @@ macx{
     QMAKE_BUNDLE_DATA += SPARKLE_DATA
 }
 
-win32{
+win32 {
     LIBS += -L$$PWD/win -lsparkle
 
     SPARKLE_FILE_PATH = $$absolute_path($$PWD/win/libs)
@@ -21,8 +21,7 @@ win32{
     equals(QMAKE_TARGET.arch, x86_64) {
         LIBS += -L$$PWD/win/libs/x64 -LWinSparkle
         SPARKLE_FILE_PATH = $$SPARKLE_FILE_PATH/x64/
-    }
-    ELSE {
+    } else {
         LIBS += -l$$PWD/win/libs/x86 -LWinSparkle
         SPARKLE_FILE_PATH = $$SPARKLE_FILE_PATH/x86/
     }
